@@ -36,7 +36,7 @@ async function openPerm(){
 }
 async function askCamera(){
   $('permBtn').disabled = true;
-  $('permStatus').textContent = 'Tap Allow on the next screen';
+  $('permStatus').textContent = 'Waiting for you to tap “Allow”…';
   try {
     const s = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false });
     s.getTracks().forEach((t) => t.stop());
