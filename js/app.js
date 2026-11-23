@@ -67,3 +67,11 @@ $('permBtn').addEventListener('click', askCamera);
 
 openPerm();
 window.__hub = { openGame, GAMES };
+
+// Cross on the scan screen: stop the camera and go back to the first Scan to Play screen.
+$('closeBtn').addEventListener('click', () => {
+  stopScan();
+  phase = 'perm';
+  overlay('guide', false);
+  show('perm');
+});
