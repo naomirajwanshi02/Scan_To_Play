@@ -16,6 +16,7 @@ const overlay = (id, on) => $(id).classList.toggle('on', on);
 function openGame(f){
   phase = 'found';
   stopScan();
+  overlay('guide', false); // the scanning screen goes at once, so it never lingers while the game loads
   $('foundName').textContent = f.name; // kept for tests (?nogo=1)
   try { navigator.vibrate?.(40); } catch { /* no vibration */ }
   if (!q.has('nogo')) location.replace(openUrl(f));
