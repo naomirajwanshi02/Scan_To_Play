@@ -12,7 +12,7 @@ const BASE = 'https://naomirajwanshi02.github.io/';
 
 export const GAMES = [
   { index: 0, id: 'sushi', name: 'Sushi', line: 'Get ready to play',
-    url: BASE + 'sushi-ar/', picture: BASE + 'sushi-ar/sushi_main.jpeg', demo: true },
+    url: BASE + 'sushi-ar/', picture: BASE + 'sushi-ar/sushi_card.png', demo: true },
   { index: 1, id: 'ramen', name: 'Ramen', line: 'Get ready to play',
     url: BASE + 'Ramen_Builder/', picture: BASE + 'Ramen_Builder/target.png', demo: true },
 ];
