@@ -11,15 +11,14 @@ const show = (id) => document.querySelectorAll('.screen').forEach((s) => s.class
 const overlay = (id, on) => $(id).classList.toggle('on', on);
 
 
+// The game opens straight away: no "found" card in between, so its intro panel is
+// the very next thing on screen after the picture is recognised.
 function openGame(f){
   phase = 'found';
   stopScan();
-  overlay('guide', false);
-  $('foundName').textContent = f.name;
-  $("foundSub").textContent = f.line;
-  overlay('found', true);
+  $('foundName').textContent = f.name; // kept for tests (?nogo=1)
   try { navigator.vibrate?.(40); } catch { /* no vibration */ }
-  if (!q.has('nogo')) setTimeout(() => location.replace(openUrl(f)), 1100);
+  if (!q.has('nogo')) location.replace(openUrl(f));
 }
 
 async function cameraGranted(){
